@@ -36,16 +36,43 @@ jobs:
           echo test, and deploy your project.
           
           
-          name: JS Actions
+         name: JS Actions
 
-on: [push]
+
+
+on:
+
+  pull_request:
+
+    types: [labeled]
+
+
 
 jobs:
+
   action:
+
     runs-on: ubuntu-latest
 
+
+
     steps:
+
       - uses: actions/checkout@v1
+ spriyadarshini-bex-patch-2
+
+
+
+      - name: hello-action
+
+        uses: ./.github/actions/hello-world
+
+
+
+      - name: ha-ha
+
+        uses: ./.github/actions/joke-action
+
 # name: JS Actions
 
 # on: [push]
@@ -54,7 +81,6 @@ jobs:
 #   action:
 
 #     runs-on: ubuntu-latest
-
 #     steps:
 #     - uses: actions/checkout@v1
 
